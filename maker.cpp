@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     string type;
-    cout << "which language u want to use? (cpp, react, flask)" << endl;
+    cout << "which language u want to use? (cpp, react, flask, electron)" << endl;
     cin >> type;
 
     if (type == "cpp") {
@@ -34,12 +34,21 @@ int main() {
         string name;
         cout << "Project name?" << endl;
         cin >> name;
-        string clone = "git clone https://github.com/mikecolbert/flask_template";
-        string mkdir = "mkdir " + name;
+        string clone = "git clone https://github.com/mikecolbert/flask_template \"" + name + "\"";
+        system(clone.c_str());
+    } else if (type == "electron")
+    {
+        string name;
+        cout << "project name?" << endl;
+        cin >> name;
+        string clone = "git clone https://github.com/bulgadev/BlankElectronTemplate \"" + name + "\"";
         string cd = "cd " + name;
-        string megazord = mkdir + "&&" + cd + "&&" + clone;
+        string npm = "npm install";
+        string megazord = cd + "&&" + npm;
+        system(clone.c_str());
         system(megazord.c_str());
-    } else {
+    }
+    else {
         cout << "thats not a option yet" << endl;
     }
 }
