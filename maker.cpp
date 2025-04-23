@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     string type;
-    cout << "which language u want to use? (cpp)" << endl;
+    cout << "which language u want to use? (cpp, react, flask)" << endl;
     cin >> type;
 
     if (type == "cpp") {
@@ -19,6 +19,26 @@ int main() {
         //makes an folder with project name
         system(megazord.c_str());
         return 0;
+    } else if (type == "react")
+    {
+        string name;
+        cout << "Project name" << endl;
+        cin >> name;
+        string enter = "cd " + name;
+        string mkdir = "mkdir " + name;
+        string react = "npx create-react-app " + name;
+        string makee = mkdir + "&&" + enter + "&&" + react;
+        system(makee.c_str());
+    } else if (type == "flask")
+    {
+        string name;
+        cout << "Project name?" << endl;
+        cin >> name;
+        string clone = "git clone https://github.com/mikecolbert/flask_template";
+        string mkdir = "mkdir " + name;
+        string cd = "cd " + name;
+        string megazord = mkdir + "&&" + cd + "&&" + clone;
+        system(megazord.c_str());
     } else {
         cout << "thats not a option yet" << endl;
     }
