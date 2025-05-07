@@ -1,9 +1,13 @@
+//thats rlly just personal to get to my project folder easier lol
+
 #include <cstdlib>
 #include <iostream>
 #include <direct.h> // For _chdir on Windows
 using namespace std;
 
 int main() {
+    string sex = "aaa";
+    
     const char* path = "C:\\documents\\projects";
     if (_chdir(path) == 0) {
         cout << "Changed directory to: " << path << endl;
